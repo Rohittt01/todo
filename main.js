@@ -1,14 +1,18 @@
 const title = document.getElementById("title")
 const button = document.getElementById("add-button")
+var parentdiv = document.getElementsByClassName("todo")[0]
+
+
 
 button.addEventListener("click", function(event){
     if(title.value == ""){
         event.preventDefault();
     }
     else{
+       var newhr = document.createElement("hr")
+       parentdiv.appendChild(newhr)
        var newdiv = document.createElement("div")
        newdiv.classList.add("todo-list")
-       var parentdiv = document.getElementsByClassName("todo")[0]
        parentdiv.appendChild(newdiv)
        var newdiv2 = document.createElement("div")
        newdiv2.classList.add("todo-div")
@@ -25,7 +29,8 @@ button.addEventListener("click", function(event){
        newdiv3.appendChild(newdiv4)
        
        var newbutton = document.createElement("button")
-       newbutton.textContent= "Completed"
+       newbutton.textContent= "Incomplete"
+       newbutton.style.backgroundColor = "gray"
        newbutton.id = "complete"
        newdiv4.appendChild(newbutton)
        var newbutton1 = document.createElement("button")
@@ -33,11 +38,24 @@ button.addEventListener("click", function(event){
        newbutton1.id = "update"
        newdiv4.appendChild(newbutton1)
        var newbutton2 = document.createElement("button")
-       newbutton2.textContent= "Delete"
        newbutton2.id = "delete"
+       
+       newbutton2.textContent= "Delete"
+       
        newdiv4.appendChild(newbutton2)
 
-       var newhr = document.createElement("hr")
-       parentdiv.appendChild(newhr)
+       
     }
+
+    newbutton2.addEventListener("click", function(){
+    parentdiv.removeChild(newdiv)
+    newhr.remove()
 })
+    newbutton1.addEventListener("click", function(){
+        newbutton.textContent = "Complete";
+        newbutton.style.backgroundColor = "rgb(39, 156, 68)";
+    })
+})
+
+
+
