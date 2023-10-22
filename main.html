@@ -7,26 +7,35 @@
     <title>Task Management</title>
 </head>
 <body>
-    <form action="" method="post">
-        <div class="task">
-        <label for="title">Title:
-            <input type="text" name="title" required>
-        </label><br><br>
-        <label for="desc">Description:
-            <textarea type="textarea" name="desc" required></textarea>
-        </label><br><br>
-        <label for="cdate">Created At:
-            <input type="date" name="cdate" required>
-        </label><br><br>
-        <label for="ddate">Due At:
-            <input type="date" name="ddate" required>
-        </label><br><br>
-        <label for="check">Completed :
-            <input type="checkbox" name="check">
-        </label>
+    <div id="header">
+        <header >To Do App</header>
+    </div>
+    <div id="head">
+        <div class="main">
+            <p>Todo Title: </p>
+            <input id="title" type="text">
         </div>
-    </form>
-
-    <script src="main.js"></script>
+    </div>
+    <div id="add">
+        <button id="add-button">Add</button>
+    </div>
+    <hr>
+    <div id="todo">
+    <div class="todo-list">
+    <div id="todo">
+        <h2>Todo 1</h2>
+    </div>
+    <div id="button">
+    <div class="button">
+        <!-- <h2>Todo 1</h2> -->
+        <button>Completed</button>
+        <button>Update</button>
+        <button>Delete</button>
+    </div>
+    </div>
+</div>
+</div>
+    <script src="main.js">
+    </script>
 </body>
 </html>
